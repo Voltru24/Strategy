@@ -1,10 +1,9 @@
-using ev
 using System;
 
 [Serializable]
 public class Attributes 
 {
-    [s]private int _force;
+    private int _force;
     private int _agility;
     private int _defence;
     private int _intellect;
