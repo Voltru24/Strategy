@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class District: MonoBehaviour
 {
+    [SerializeField] private string _name;
+    
     private int _income = 50;
     private List<Command> _commands;
-    [SerializeField] private string _name;
 
     public IReadOnlyList<Command> Commands => _commands;
     public string Name => _name;
@@ -14,9 +15,10 @@ public class District: MonoBehaviour
 
     private void Start()
     {
-        _commands = new List<Command>();
-        _commands.Add(new CommandSearch());
-        _commands.Add(new CommandSearch());
+        _commands = new List<Command>
+        {
+            new CommandSearch()
+        };
     }
 
     public void RemoveCommand(Command command)

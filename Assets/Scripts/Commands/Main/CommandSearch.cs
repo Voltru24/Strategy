@@ -6,13 +6,13 @@ using UnityEngine;
 public class CommandSearch : Command
 {
     public CommandSearch() 
-    { 
+    {
         _name = "Поиск";
     }
 
     public override void Execute(Action<ResultCommand> takeResult)
     {
-        Debug.Log("Ты нечего не нашёл");
+        new DialogSearch().Run();
 
         takeResult?.Invoke(new ResultCommand(this, true));
     }
